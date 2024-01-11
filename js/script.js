@@ -4,11 +4,11 @@ console.log('Gracz wpisał: ' + playerInput);
 
 let playerMove = 'nieznany ruch';
 
-if(playerInput == '1'){
-  playerMove = 'kamień';
+if (playerInput == '1') {
+    playerMove = 'kamień';
 } else if (playerInput == '2') {
     playerMove = 'papier';
-} else {playerMove = 'nożyce'}
+} else { playerMove = 'nożyce' }
 
 printMessage('Twój ruch to: ' + playerMove);
 
@@ -25,4 +25,12 @@ if (randomNumber == 1) {
 } else { computerMove = 'nożyce' }
 
 printMessage('Mój ruch to: ' + computerMove);
+
+if (computerMove == playerMove) {
+    printMessage('Remis')
+} else if ((computerMove == 'kamień' && playerMove == 'papier') ||
+    (computerMove == 'papier' && playerMove == 'nożyce') ||
+    (computerMove == 'nożyce' && playerMove == 'kamień')) {
+    printMessage('Ty wygrywasz')
+} else (printMessage('Ja wygrywam'))
 
