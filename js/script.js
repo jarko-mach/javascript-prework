@@ -1,13 +1,20 @@
 
-let playerInput = prompt('Wybierz swój ruch! 1: kamień, 2: papier, 3: nożyce.');
+function playGame(playerInput) {
 
-if (getMoveName(playerInput) != 'nieznany ruch') {
+    clearMessages()
 
-    let playerMove = getMoveName(playerInput);
-    let randomNumber = Math.floor(Math.random() * 3 + 1);
-    let computerMove = getMoveName(randomNumber);
-    displayResult(computerMove, playerMove)
+    if (getMoveName(playerInput) != 'nieznany ruch') {
 
-} else {
-    printMessage('Spróbujmy jeszcze raz');
+        let playerMove = getMoveName(playerInput);
+        let randomNumber = Math.floor(Math.random() * 3 + 1);
+        let computerMove = getMoveName(randomNumber);
+        displayResult(computerMove, playerMove)
+
+    } else {
+        printMessage('Spróbujmy jeszcze raz');
+    }
 }
+
+document.getElementById('play-rock').addEventListener('click', function(){playGame(1)});
+document.getElementById('play-paper').addEventListener('click', function(){playGame(2)});
+document.getElementById('play-scissors').addEventListener('click', function(){playGame(3)});
