@@ -1,14 +1,14 @@
-function printMessage(msg) {
+const printMessage = function (msg) {
 	let div = document.createElement('div');
 	div.innerHTML = msg;
 	document.getElementById('messages').appendChild(div);
 }
 
-function clearMessages() {
+const clearMessages = function () {
 	document.getElementById('messages').innerHTML = '';
 }
 
-function getMoveName(argMoveId) {
+const getMoveName = function (argMoveId) {
 	if (argMoveId == 1) {
 		return 'kamień';
 	} else if (argMoveId == 2) {
@@ -21,7 +21,7 @@ function getMoveName(argMoveId) {
 	return 'nieznany ruch';
 }
 
-function displayResult(argComputerMove, argPlayerMove) {
+const displayResult = function (argComputerMove, argPlayerMove) {
 	printMessage('Zagrałem ' + argComputerMove + ', a Ty ' + argPlayerMove);
 
 	if (argComputerMove == argPlayerMove) {
